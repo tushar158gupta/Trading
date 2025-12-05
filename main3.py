@@ -3,6 +3,8 @@ import requests
 import time
 from datetime import datetime
 import json
+import os
+from dotenv import load_dotenv
 
 # ============================================================
 # TELEGRAM CONFIG
@@ -12,8 +14,8 @@ update_icons = ["⏳", "🔄", "⚡", "📈", "📊"]
 update_index = 0
 last_close = {}   # store previous close for change detection
 
-BOT_TOKEN = "8580237190:AAFMP7hYeJeLAoEDHPFm90uMW6gJr7dMKU0"
-CHAT_ID = "@tushartradingupdates"   # or your numeric chat id for testing
+BOT_TOKEN =  os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 def telegram_send(text):
     try:

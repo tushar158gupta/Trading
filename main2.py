@@ -6,12 +6,14 @@ from datetime import datetime, timedelta
 import numpy as np
 import json
 import requests
+import os
+from dotenv import load_dotenv
 
 # ---------------------------------------------------
 # TELEGRAM CONFIG
 # ---------------------------------------------------
-BOT_TOKEN =  "8580237190:AAFMP7hYeJeLAoEDHPFm90uMW6gJr7dMKU0" 
-CHAT_ID = "@tushartradingupdates"
+BOT_TOKEN =  os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 def send_telegram(text):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"

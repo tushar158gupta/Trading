@@ -3,6 +3,8 @@ import time
 from datetime import datetime, timedelta
 import json
 import threading
+import os
+from dotenv import load_dotenv
 
 # ============================================================
 #  TELEGRAM CLIENT (Clean + Professional)
@@ -369,8 +371,9 @@ class OptionProcessor:
 #  CONFIG
 # ============================================================
 
-BOT_TOKEN = "8580237190:AAFMP7hYeJeLAoEDHPFm90uMW6gJr7dMKU0"          # <- put your bot token here
-CHAT_ID   = "@tushartradingupdates"           # <- or your numeric chat id
+BOT_TOKEN  =  os.getenv("BOT_TOKEN")          # <- put your bot token here
+# BOT_TOKEN = "8580237190:AAFMP7hYeJeLAoEDHPFm90uMW6gJr7dMKU0"          # <- put your bot token here
+CHAT_ID = os.getenv("CHAT_ID")           # <- or your numeric chat id
 INDEX_SYMBOL = "BANKNIFTY"
 SLEEP_SECONDS = 2
 MAX_DASHBOARD_SYMBOLS = 10

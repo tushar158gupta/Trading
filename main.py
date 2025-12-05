@@ -5,14 +5,17 @@ import yfinance as yf
 from datetime import datetime, time
 import time as time_module
 import requests
+import os
+from dotenv import load_dotenv
+
 
 # ================== TELEGRAM CONFIG ==================
 
 # 🔴 Replace this with your NEW bot token from @BotFather
-BOT_TOKEN = "8580237190:AAFMP7hYeJeLAoEDHPFm90uMW6gJr7dMKU0"   
 
-# Channel username where bot is added as admin
-CHAT_ID = "@tushartradingupdates"
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 
 def send_telegram_message(text: str):
